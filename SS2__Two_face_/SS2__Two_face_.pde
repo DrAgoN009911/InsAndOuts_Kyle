@@ -1,3 +1,4 @@
+// Kyle Holston 
 void setup() {
 size(800,800);
 }
@@ -13,11 +14,11 @@ void draw() {
 value2= random(255);
 
     background (r, g, b);
-    
+    println("mouse was pressed", width, height);
+}
 
-  println("mouse was pressed", width, height);
-  if( mousePressed == true)
-  {
+  
+  void mousePressed(){
        background (r,g,b);
      fill(119, 222, 100);
     rect(100, 111, 100, 250);
@@ -30,9 +31,12 @@ value2= random(255);
     fill(155, 255, 10);
     rect(88, 600, 800, 50);
     println("button pressed", width, height);
-  } 
-  else if (keyPressed == true){
-    background(0,0,210);
+  }
+ 
+  
+  void keyPressed(){
+   if (mouseX<580){
+   background(r,g,b);
     fill(119, 222, 100);
     rect(100, 111, 100, 250);
     fill(180, 180, 215);
@@ -43,12 +47,17 @@ value2= random(255);
     rect(600, 111, 100, 250);
     fill(255, 255, 255);
     triangle(270, 600, 382, 410, 494, 600);
-  }
+   }
   
+  else if (mouseX>580){
+  background(33);
+  }
   else
   {
-    background(value);
+    float ran = random(50);
+    background(ran);
   }
+  }
+  
     
   
-}
