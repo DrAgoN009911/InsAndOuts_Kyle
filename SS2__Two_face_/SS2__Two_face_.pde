@@ -1,4 +1,4 @@
-// Kyle Holston 
+// Kyle Holston Two face If you press mouse it will show one face, if you click any key once mouse is on left side it will show one background color. And if you click any key on right side it will show a color and if not should show a random color for the background. If not it should show a random color for the rectangle.
 void setup() {
 size(800,800);
 }
@@ -55,7 +55,8 @@ value2= random(255);
   else
   {
     float ran = random(50);
-    background(ran);
+    fill(ran);
+    rect(222,222,100,150);
   }
   }
   
