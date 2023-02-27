@@ -1,4 +1,8 @@
 // Kyle Holston LetterK Instructions: If you move the mouse over to the open space where the lines indicate then you will see a change in the background and see the letter K appear
+int n =50;
+float grow= 0;
+float right = 0;
+
 void setup(){
  size(700,700); 
 }
@@ -16,6 +20,9 @@ if (mouseX>500 && mouseY>500){
   background(210,11,1);
   fill(0);
   rect(200,350, 100, 100);
+  
+  
+  
   for (int q = 115; q <700; q = q +10){
 line(0, q, 200, q);
 rect(200,250,100,100);
@@ -27,6 +34,12 @@ rect(400,229,100,100);
 rect(495,145,100,100);
 rect(200,150,100,100);
 rect(200,500,100,100);
+
+  ellipse (0+ right,0+right, 50, 50);
+  right++;
+    ellipse (350 +right,0+right, 50, 50);
+    right++;
+
 
 
 
