@@ -23,10 +23,15 @@ void setup(){
 
 void draw(){
  background(255, 0,0);
+ 
+ fill(255,255,255);
+ text("Rufus", 100, 600);
+     text("Ryu", 700, 600);
   
   image (Streetfighter, 700, height/2);
     image (rufus, 80, height/2);
     image (referee, 400, 100);
+
     
     if (mouseX >300 && mouseX <500 && mouseY > 0 && mouseY < 200){
           text("Fight!", 400, 300);
@@ -40,8 +45,7 @@ void draw(){
     fade = -fade;
     }
      
-     text("Rufus", 100, 600);
-     text("Ryu", 700, 600);
+
     }
     
 
