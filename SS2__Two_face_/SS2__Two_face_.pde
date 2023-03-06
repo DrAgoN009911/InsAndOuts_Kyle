@@ -10,21 +10,22 @@ float g=223;
 float b=0;
 
 void draw() {
- rect(100, 111, 100, 250);
-value2= random(255);
+ //rect(100, 111, 100, 250);
+//value2= random(255);
 
-    background (r, g, b);
+   // background (r, g, b);
     println("mouse was pressed", width, height);
 }
 
   
   void mousePressed(){
        background (r,g,b);
-     fill(119, 222, 100);
+         float ran = random(50);
+  fill(ran*5);
     rect(100, 111, 100, 250);
-    fill(180, 180, 215);
+    fill(119,222,100);
     rect(200, 111, 100, 250);
-    fill(119, 222, 100);
+    fill(ran*5);
     rect(500, 111, 100, 250);
     fill(180, 180, 215);
     rect(600, 111, 100, 250);
@@ -37,11 +38,12 @@ value2= random(255);
   void keyPressed(){
    if (mouseX<580){
    background(r,g,b);
-    fill(119, 222, 100);
+ float r = random(50);
+  fill(r*5);
     rect(100, 111, 100, 250);
     fill(180, 180, 215);
     rect(200, 111, 100, 250);
-    fill(119, 222, 100);
+    fill(r*5);
     rect(500, 111, 100, 250);
     fill(180, 180, 215);
     rect(600, 111, 100, 250);
@@ -54,8 +56,6 @@ value2= random(255);
   }
   else
   {
-    float ran = random(50);
-    fill(ran);
     rect(222,222,100,150);
   }
   }
