@@ -5,6 +5,10 @@ PImage Ru;
 float opacity =0;
 float fade = 1;
 PImage[] streetfighters = new PImage[4];
+   PImage c0;
+    PImage c1;
+    PImage c2;
+    PImage c3;
 
 void setup(){
  size (500,500); 
@@ -16,6 +20,13 @@ void setup(){
   streetfighters[1]= loadImage("ehonda.jpg");
    streetfighters[2]= loadImage("sagat.jpg");
     streetfighters[3]= loadImage("zangief.jpg");
+ 
+ c0= streetfighters[0]; 
+ c1= streetfighters[1];
+  c2=  streetfighters[2];
+   c3= streetfighters[3];
+
+
 
 
 
@@ -28,6 +39,11 @@ void draw (){
  Rufus(400, 400, 480, 400, "Rufus");
  image (R, 50, 260);
  image (Ru, 400, 270);
+ image(c0, 50, 260);
+ image(c1, 300, 400);
+ image(c2, 50, 260);
+ image(c3, 300, 400);
+
  
  fill(opacity);
     text("VS", 200, 300);
@@ -52,16 +68,24 @@ void Rufus(int Rux, int Ruy, int Ruxone, int Ruxtwo, String Rucharacter){
 
 void mousePressed(){
  if (mouseX > 50 && mouseX < 100 && mouseY > 50 && mouseY < 100){
-   image(streetfighters[0], 255, 255);
+   c0=streetfighters[0];
+   fill(0,0,0);
+   text("Ken", 80, 400);
    } 
    else if (mouseX > 100 && mouseX < 160 && mouseY < 160){
-    image(streetfighters[1], 255, 255); 
+    c1=streetfighters[1];
+    fill(0,0,0);
+    text("E.Honda", 300,400);
    } 
    else if (mouseX > 160 && mouseX < 210 && mouseY > 160 && mouseY < 210){
-    image(streetfighters[2], 255, 255); 
+    c2=streetfighters[2];   
+fill(0,0,0);
+    text("sagat", 80, 400);
    }
    else if (mouseX > 210 && mouseX < 270 && mouseY > 210 && mouseY < 260){
-    image (streetfighters[3], 255, 255); 
+      c3= streetfighters[3];
+    fill(0,0,0);
+    text("Zangief", 300,400);
    } else {
      image (R, 50, 260);
  image (Ru, 400, 270);
