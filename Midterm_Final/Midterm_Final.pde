@@ -1,3 +1,10 @@
+// Fill the rects
+
+import processing.serial.*; //imports Serial library from Processing
+
+Serial myPort; // creates object from Serial class
+int val=0; // creates variable for data coming from serial port
+
 String state = "pregame";
 float [] rec = new float [5];
 float recs = rec[0];
@@ -25,11 +32,17 @@ void setup (){
     rec[4] = (285);
     recs4 = rec[4];
     
+    printArray(Serial.list()); // this line prints the port list to the console
+  String portName = Serial.list()[0]; //change the number in the [] for the port you need
+  myPort = new Serial(this, portName, 9600);
     
 
 }
 
 void draw (){
+    if ( myPort.available() > 0) { // If data is available,
+    val = myPort.read(); // read it and store it in val
+  }
   if (state== "pregame"){
    pregame(); 
  }else if (state == "game"){
@@ -59,7 +72,7 @@ void mousePressed()
  if (mouseX > 21 && mouseX < 108 && mouseY > 24 && mouseY < 108)
  {
  fill (100, 40, 200);
-  rect (recs, recs, 90, 90);
+  rect (recs, recs, 90, 90); 
  } else if (mouseX > 111 && mouseX < 161 && mouseY > 112 && mouseY < 160){
   fill(255, 0, 0);
   rect(recs1, recs1, 50, 50); 
@@ -94,6 +107,9 @@ void game(){
   rect (140, recs2, 30, 30);
   rect(recs3,80, 40,40);
   rect(140, recs4, 200,200);
+  fill(val,val,222); //Potentiometer will change the color of the shapes
+  ellipse(width/2, height/2, 100,100);
+  
 
 } 
 
