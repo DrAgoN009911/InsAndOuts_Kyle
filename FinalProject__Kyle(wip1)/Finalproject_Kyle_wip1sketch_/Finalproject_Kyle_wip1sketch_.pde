@@ -21,6 +21,12 @@ void draw (){
  text("LED four on", 20, 150);
  fill(378, 21, 500);
  text("LED five on", 340, 150);
- text("All LEDS", 180, 150);
+ text("All LEDS", 180, 120);
+ text("All LEDS off", 180, 190);
+ fill(312, 218, 100);
+ text("Servo on", 20, 240);
+ fill(80, 365, 421);
+ text("Servo off", 340, 240);
+ fill(379, 292, 300);
  
 }
