@@ -1,4 +1,4 @@
-//PImage rl;
+
 
 
 import processing.serial.*;
@@ -14,7 +14,7 @@ void setup(){
  imageMode(CENTER);
  
  printArray(Serial.list());
- String portName = Serial.list()[];
+ String portName = Serial.list()[0];
  myPort = new Serial(this, portName, 9600);
  //rl = loadImage("redlight.jpg");
 }
@@ -90,4 +90,5 @@ else {
  myPort.write(0);
  button = false;
   //Everything off
+}
 }
