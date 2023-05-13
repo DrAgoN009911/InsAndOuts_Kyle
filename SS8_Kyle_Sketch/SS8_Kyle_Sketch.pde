@@ -101,6 +101,7 @@ void mousePressed()
     button = true;
   myPort.write(255);
  }
+ myPort.write(0);
  button = false;
 }
 
