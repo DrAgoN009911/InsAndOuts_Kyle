@@ -11,10 +11,10 @@ Note: Be sure to specify correct port number below!
 ///////////////////////////////////////////////////////
 
 int val=0; //to send over Serial
+#include <Servo.h> 
 
 //button interface
-int buttonWidth=150;
-int buttonHeight=50;
+Servo servo;
 boolean button=false;
 
 import processing.serial.*;  //import Serial library
@@ -35,16 +35,12 @@ void setup() {
   printArray(Serial.list()); // prints port list to the console
   String portName = Serial.list()[1]; //change to match your port
   myPort = new Serial(this, portName, 9600); //initialize Serial communication at 9600 baud
+  servo.attach(SERVOPIN);
+Serial.begin(9600);
 }
 
 void draw() {
   //interface
-  fill(0);
-  rect (width/2, height/2, buttonWidth, buttonHeight);
-  text ("this way", width/2, 100);
-  text ("that way", width/2, height-100);
-  fill(255);
-  text ("both ways", width/2, height/2);
   
   //mouse location controls communication to Serial 
   val= int (map (mouseY, 0, width, 0, 180)); //remaps mouseY to 0-180  
@@ -54,12 +50,25 @@ void draw() {
   //NOTE: SENDING VALUES 0-180 TO MATCH ANGLE RANGE OF SERVO. OTHER MOTORS HAVE 360 CAPABILITIES.
 }
 
-void mousePressed() {
-  //If button is pressed 
-  if (mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY> height/2 - buttonHeight/2 && mouseY< height/2 + buttonHeight/2) {
-    button=true;
-    myPort.write(255); //write to Serial
+void loop() {
+if (Serial.available()) { // If data is available to read
+    val = Serial.read(); // read it and store it in val
   }
-  //println (button); 
-  button=false; //returns button state to false;
+  if (value < 255){
+     servo.write(val);  //position of servo is val
+    delay(15);
+    }
+    else if (val == 255){
+for (angle = 0; angle< 180; angle ++)
+{
+servo.write(angle);
+delay(15);
+}
+ for (angle = 180; angle > 0; angle--)
+    {
+      servo.write(angle);
+      delay(15);
+    }
+    val = 0; //reset val;
+}
 }
