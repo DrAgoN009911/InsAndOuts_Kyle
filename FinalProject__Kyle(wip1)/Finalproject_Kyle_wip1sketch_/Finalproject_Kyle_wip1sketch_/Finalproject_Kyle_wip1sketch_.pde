@@ -2,7 +2,7 @@
 
 
 import processing.serial.*;
-int val =0;
+int value =0;
 boolean button = false;
 
 Serial myPort;
@@ -40,8 +40,8 @@ void draw (){
  fill(379, 292, 300);
 println (mouseX);
 println(mouseY);
-val = int (map(mouseY, 0, width, 0,180));
-myPort.write(val);
+//value = int (map(mouseY, 0, width, 0,180));
+//myPort.write(value);
 
 }
 
@@ -65,7 +65,7 @@ void mousePressed(){
    myPort.write(5);
 
   //LED5
-} else if (mouseX > 183 && mouseX < 294 && mouseY > 108 && mouseY < 110){
+} else if (mouseX > 183 && mouseX < 294 && mouseY > 100 && mouseY < 110){
    myPort.write(1);
    myPort.write(2);
    myPort.write(3);
@@ -76,11 +76,11 @@ void mousePressed(){
 } else if (mouseX > 185 && mouseX < 290 && mouseY > 177 && mouseY < 180){
     myPort.write(0);
   //All LEDS OFF
-} else if (mouseX > 25 && mouseX < 102 && mouseY > 232 && mouseY < 234){
+} else if (mouseX > 25 && mouseX < 102 && mouseY > 220 && mouseY < 241){
  button = true;
   myPort.write(255);
   //Servo motor on
-} else if (mouseX > 345 && mouseX < 427 && mouseY > 231 && mouseY < 233){
+} else if (mouseX > 340 && mouseX < 430 && mouseY > 221 && mouseY < 239){
  button = false;
   myPort.write(0);
 
