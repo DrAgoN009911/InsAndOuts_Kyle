@@ -46,41 +46,37 @@ println(mouseY);
 }
 
 void mousePressed(){
- if (mouseX >27 && mouseX < 124 && mouseY > 58 && mouseY < 62){
+ if (mouseX >20 && mouseX < 140 && mouseY > 50 && mouseY < 70){
    myPort.write(1);
    //LED 1
-}else if (mouseX > 163 && mouseX < 266 && mouseY > 61 && mouseY < 63){
+}else if (mouseX > 159 && mouseX < 280 && mouseY > 50 && mouseY < 70){
   myPort.write(2);
   //LED2
   
-}else if (mouseX > 303 && mouseX < 428 && mouseY > 54 && mouseY < 65){
+}else if (mouseX > 300 && mouseX < 430 && mouseY > 50 && mouseY < 70){
    myPort.write(3);
 
   //LED3
-} else if (mouseX > 22 && mouseX < 131 && mouseY > 140 && mouseY < 144){
+} else if (mouseX > 20 && mouseX < 140 && mouseY > 130 && mouseY < 150){
    myPort.write(4);
 
   //LED4
-} else if (mouseX > 345 && mouseX <450 && mouseY > 141 && mouseY < 143){
+} else if (mouseX > 340 && mouseX <460 && mouseY > 130 && mouseY < 150){
    myPort.write(5);
 
   //LED5
-} else if (mouseX > 183 && mouseX < 294 && mouseY > 100 && mouseY < 110){
-   myPort.write(1);
-   myPort.write(2);
-   myPort.write(3);
-   myPort.write(4);
-   myPort.write(5);
+} else if (mouseX > 180 && mouseX < 301 && mouseY > 100 && mouseY < 120){
+   myPort.write(6);
 
   //All LEDS on
-} else if (mouseX > 185 && mouseX < 290 && mouseY > 177 && mouseY < 180){
+} else if (mouseX > 180 && mouseX < 300 && mouseY > 170 && mouseY < 190){
     myPort.write(0);
   //All LEDS OFF
-} else if (mouseX > 25 && mouseX < 102 && mouseY > 220 && mouseY < 241){
+} else if (mouseX > 20 && mouseX < 110 && mouseY > 220 && mouseY < 241){
  button = true;
   myPort.write(255);
   //Servo motor on
-} else if (mouseX > 340 && mouseX < 430 && mouseY > 221 && mouseY < 239){
+} else if (mouseX > 340 && mouseX < 432 && mouseY > 220 && mouseY < 240){
  button = false;
   myPort.write(0);
 

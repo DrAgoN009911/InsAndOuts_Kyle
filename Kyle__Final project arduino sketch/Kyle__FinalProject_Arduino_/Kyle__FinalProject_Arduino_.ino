@@ -76,7 +76,16 @@ digitalWrite(LED2, LOW);
 digitalWrite(LED3, LOW);
 digitalWrite(LED4, LOW);
 
-} else if (value < 255){
+} else if (val == 6){
+digitalWrite(LED5, HIGH);
+digitalWrite(LED1, HIGH);
+digitalWrite(LED2, HIGH);
+digitalWrite(LED3, HIGH);
+digitalWrite(LED4, HIGH);
+
+}
+
+ else if (value < 255){
 for (angle = 0; angle < 180; angle ++)
 {
 servo.write(angle);
